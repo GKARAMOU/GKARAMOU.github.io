@@ -23,6 +23,8 @@ describe('portfolio', () => {
     ).toBeInTheDocument()
     expect(screen.getByText('2022 — September 2025')).toBeInTheDocument()
     expect(screen.getByText(/based in greece and open to remote/i)).toBeInTheDocument()
+    expect(screen.getByText(/resolvehub/i)).toBeInTheDocument()
+    expect(screen.getAllByRole('link', {name: /live demo/i}).length).toBeGreaterThan(0)
     expect(screen.getByRole('link', {name: /download cv/i})).toBeInTheDocument()
   })
 
