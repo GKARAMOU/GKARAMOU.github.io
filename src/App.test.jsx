@@ -8,6 +8,11 @@ describe('portfolio', () => {
 
     expect(
       screen.getByRole('heading', {
+        name: /ledgerguard — secure wallet platform/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
         name: /i build reliable software at the intersection of backend engineering and ai/i,
       }),
     ).toBeInTheDocument()
@@ -24,7 +29,7 @@ describe('portfolio', () => {
     expect(screen.getByText('2022 — September 2025')).toBeInTheDocument()
     expect(screen.getByText(/based in greece and open to remote/i)).toBeInTheDocument()
     expect(screen.getByText(/resolvehub/i)).toBeInTheDocument()
-    expect(screen.getAllByRole('link', {name: /live demo/i}).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', {name: /live demo/i}).length).toBeGreaterThanOrEqual(4)
     expect(screen.getByRole('link', {name: /download cv/i})).toBeInTheDocument()
   })
 
